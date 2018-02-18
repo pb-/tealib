@@ -60,8 +60,10 @@ func loop(messages chan<- tealib.Message, commands <-chan tealib.Command) {
 		case ci := <-connInfo:
 			if ci.isConnected {
 				clients[ci.id] = ci.connection
+				messages <- ci.connection.server.startServer.Connect(ci.id)
 			} else {
 				delete(clients, ci.id)
+				messages <- ci.connection.server.startServer.Disconnect(ci.id)
 			}
 		}
 	}
