@@ -5,5 +5,6 @@
 To get started, have a look at the samples.
 
  * [exit](examples/exit/main.go) - a program that exits immediately.
+ * [echo](examples/echo/) - a simple line-based echo server.
 
 Given the experimental nature of this library, expect breaking changes any moment without warning. Make sure to vendor it.
